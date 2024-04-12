@@ -1,20 +1,30 @@
 html, body {
     padding: 0;
     margin: 0;
-
-    background-color: #111 !important;
-
     text-align: justify;
     text-justify: inter-word !important;
+}
+
+body {
+    background-color: #111 !important;
+
+    background-image: url(images/background.jpg);
+    
+    background-size:contain;
 }
 
 h1, h2 {
     text-transform: uppercase;
 }
 
+header {
+    font-size: 128px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 .dots {
     height: 24px;
-    margin: 32px 0;
 }
 
 #nav-bar{
@@ -42,7 +52,7 @@ h1, h2 {
 
 #main-page {
     margin: 48px;
-    padding: 64px 0;
+    padding: 72px 0;
     padding-bottom: 72px;
 
     background-color: #fff;
@@ -57,12 +67,16 @@ h1, h2 {
     gap: 32px;
 }
 
+#main-page .dots {
+    margin: 32px 0;
+}
+
 #main-page .col {
     min-width: 300px;
 }
 
 #main-page .text {
-    padding-top: 64px;
+    padding-top: 128px;
 }
 
 #main-page .text h1, #main-page .text h2 {
@@ -88,20 +102,19 @@ h1, h2 {
 }
 
 #page-1 {
-    margin: 128px 32px;
+    margin: 240px 32px;
 
     color: #fff;
-}
-
-#page-1 header {
-    font-size: 128px;
-    text-align: center;
-    text-transform: uppercase;
 }
 
 #page-1 .content {
     width: 55%;
     margin: 0 auto;
+    padding-top: 64px;
+}
+
+#page-1 .dots {
+    margin-right: 48px;
 }
 
 #page-1 .tab {
@@ -118,9 +131,99 @@ h1, h2 {
 #page-1 .text {
     min-width: 640px;
     margin-right: 64px;
+    padding-top: 86px;
 }
 
 #page-1 .tab img {
     min-width: 240px;
+    width: 100%;
+}
+
+#page-2 {
+    background-color: #fff;
+    padding: 240px 0;
+}
+
+#page-2 .content {
+    width: 55%;
+    margin: 0 auto;
+}
+
+#page-2 .row {
+    margin-top: 72px;
+
+    gap: 48px;
+}
+
+#page-2 h1 {
+    font-size: 156px;
+    font-weight: bold;
+
+    color: #aaa;
+}
+
+#page-2 h2 {
+    margin: auto;
+
+    font-size: 56px;
+}
+
+#page-2 p {
+    font-size: large;
+}
+
+#page-2 .subtitle{
+    margin-top: 24px;
+}
+
+#page-2 .text {
+    margin-left: 86px;
+}
+
+#page-2 .dots {
+    margin: 18px 0 32px 0;
+}
+
+#page-2 .product {
+    width: 100%;
+    border-radius: 32px;
+}
+
+#page-3 {
+    margin: 240px 32px;
+
+    color: #fff;
+}
+
+#page-3 .designers,#page-3 .content {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#page-3  .designers .dots {
+    height: 42px;
+    display: block;
+    margin: 32px auto 52px auto;
+}
+
+#page-3 .designers p {
+    font-size: xx-large;
+    font-weight: lighter;
+}
+
+#page-3 .content {
+    padding: 0 124px;
+}
+
+#page-3 .content .dots {
+    height: 42px;
+    display: block;
+}
+
+#page-3 .row {
+    gap: 32px;
+}
+
+#page-3 .content .principal {
     width: 100%;
 }
