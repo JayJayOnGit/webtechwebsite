@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <title>THE MAD HATTER</title>
-</head>
+<?php
+include_once 'header.php';
+?>
+
 <body>
     <div id="main-page" class="page"> <!-- Landing Page -->
-        <div id="nav-bar" class="position-absolute start-0 top-0">
-            <a>THE MAD HATTER*</a>
-            <a>Home</a>
-            <a>About</a>
-            <a>Solutions</a>
-            <a>Contact Us</a>
-        </div>
-
         <container class="container">
             <div class="content row">
                 <div class="col text">
@@ -131,4 +117,7 @@
         </div>
     </div>
 </body>
-</html>
+
+<?php
+include_once 'footer.php';
+?>
