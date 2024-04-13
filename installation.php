@@ -38,28 +38,17 @@ function update_projects($table_data, $current_version) {
     foreach ($table_data as $row)
     {
         $title = mysqli_real_escape_string($mysqli, $row['title']);
+        $description = mysqli_real_escape_string($mysqli, $row['description']);
+        $version = mysqli_real_escape_string($mysqli, $current_version);
+        $imgref = mysqli_real_escape_string($mysqli, $row['imgref']);
 
-        $stmt = "SELECT 1 FROM projects WHERE title='$title'";
+        $insert_stmt = "INSERT INTO projects (title, description, version, imgref) 
+                        VALUES ('$title', '$description', '$version', '$imgref')
+                        ON DUPLICATE KEY UPDATE
+                        title='$title', description='$description', version='$version', imgref='$imgref'
+                        ";
 
-        $exists = $mysqli->query($stmt);
-
-        echo $exists ? "true" : "false";
-
-        if (!$exists)
-        {
-            $description = mysqli_real_escape_string($mysqli, $row['description']);
-            $version = mysqli_real_escape_string($mysqli, $current_version);
-            $imgref = mysqli_real_escape_string($mysqli, $row['imgref']);
-
-            $insert_stmt = "INSERT INTO projects (title, description, version, imgref) VALUES ('$title', '$description', '$version', '$imgref')";
-
-            $results = $mysqli->query($insert_stmt);
-
-            echo $mysqli->error;
-        }
-        else {
-            echo "already";
-        }
+        $result = $mysqli->query($insert_stmt);
     }
 }
 
@@ -70,29 +59,37 @@ function check_version($name, $current_version) {
 
     $old_version = get_version("$name");
 
+    $escaped_name = mysqli_real_escape_string($mysqli, $name);
+    $escaped_version = mysqli_real_escape_string($mysqli, $current_version);
 
     if (false === $old_version) {
-        echo "adding bd";
-
-        $escaped_name = mysqli_real_escape_string($mysqli, $name);
-        $escaped_version = mysqli_real_escape_string($mysqli, $current_version);
-
         $add_version = "INSERT INTO versions (data_name, version)
                         VALUES ('$escaped_name', '$escaped_version')";
 
         if (true === $mysqli->query($add_version)) {
-            //echo "version " . $current_version . " added.";
+            echo "version " . $current_version . " added.";
         } else {
-            //echo "Error: " . $mysqli->error;
+            echo "Error: " . $mysqli->error;
         }
 
         return true;
     }
 
+    if (version_compare($current_version, $old_version, '>'))
+    {
+        $update_version = "UPDATE versions SET version='$escaped_version' WHERE data_name='$escaped_name'";
+
+        if (true === $mysqli->query($update_version)) {
+            echo "version " . $current_version . " updated.";
+        } else {
+            echo "Error: " . $mysqli->error;
+        }
+    }
+
     return true;
 }
 
-$version = "0.1.0";
+$version = "0.1.1";
 
 $new_projects = check_version("projects", $version);
 

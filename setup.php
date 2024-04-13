@@ -2,18 +2,18 @@
 session_start();
 include_once 'connect.php';
 
-$collab = "CREATE TABLE collaorator_projects (
+$collab = "CREATE TABLE projects (
         id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        title VARCHAR(255) NOT NULL,
-        date DATE NOT NULL,
+        title VARCHAR(255) NOT NULL UNIQUE,
         description TEXT NOT NULL,
+        version TEXT NOT NULL,
         imgref VARCHAR(255) NOT NULL
         )";
 
-if ($mysqli->query($collab) === TRUE) {
-    echo "Table collaorator_projects created successfully";
+if (true === $mysqli->query($collab)) {
+    echo "Table projects created successfully  |  ";
 } else {
-    echo "Error creating table: " . $mysqli->error;
+    echo "Error creating table: " . $mysqli->error . "  |  ";
 }
 
 $des = "CREATE TABLE designers (
@@ -22,10 +22,10 @@ $des = "CREATE TABLE designers (
         surname VARCHAR(255) NOT NULL
         )";
 
-if ($mysqli->query($des) === TRUE) {
-    echo "Table designers created successfully";
+if (true === $mysqli->query($des)) {
+    echo "Table designers created successfully  |  ";
 } else {
-    echo "Error creating table: " . $mysqli->error;
+    echo "Error creating table: " . $mysqli->error . "  |  ";
 }
 
 $princ = "CREATE TABLE principals (
@@ -36,9 +36,9 @@ $princ = "CREATE TABLE principals (
         )";
 
 if ($mysqli->query($princ) === TRUE) {
-    echo "Table principals created successfully";
+    echo "Table principals created successfully  |  ";
 } else {
-    echo "Error creating table: " . $mysqli->error;
+    echo "Error creating table: " . $mysqli->error . "  |  ";
 }
 
 $week = "CREATE TABLE weekly_insights (
@@ -47,9 +47,21 @@ $week = "CREATE TABLE weekly_insights (
         description TEXT NOT NULL
         )";
 
-if ($mysqli->query($week) === TRUE) {
-    echo "Table weekly_insights created successfully";
+if (true === $mysqli->query($week)) {
+    echo "Table weekly_insights created successfully  |  ";
 } else {
-    echo "Error creating table: " . $mysqli->error;
+    echo "Error creating table: " . $mysqli->error . "  |  ";
+}
+
+$ver = "CREATE TABLE versions (
+        id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        data_name VARCHAR(255) NOT NULL UNIQUE,
+        version TEXT NOT NULL
+        )";
+
+if (true === $mysqli->query($ver)) {
+    echo "Table versions created successfully  |  ";
+} else {
+    echo "Error creating table: " . $mysqli->error . "  |  ";
 }
 ?>
