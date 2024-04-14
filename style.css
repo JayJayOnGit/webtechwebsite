@@ -239,6 +239,7 @@ header {
     right: 0;
     margin: auto;
     padding: 32px;
+    padding-bottom: 16px;
 
     background-color: #fff;
 
@@ -292,4 +293,12 @@ header {
 
 #contact-us .sign-up {
     display: block;
+}
+
+#submit-message {
+    text-align: center;
+    padding-top: 16px;
+    margin: 0;
+
+    color: #000 !important;
 }

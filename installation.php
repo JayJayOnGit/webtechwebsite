@@ -14,7 +14,7 @@ function get_version($data_name) {
     // Execute the query
     $result = $mysqli->query($version_query);
 
-//    echo $result->fetch_all(MYSQLI_ASSOC)[0]['version'];
+//    echo  ['version'];
 
     // Check if the query was successful
     if ($result) {
