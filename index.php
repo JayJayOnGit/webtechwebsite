@@ -34,7 +34,10 @@ include_once 'header.php';
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra ac tortor sit amet semper. Vestibulum feugiat molestie nibh, ac interdum lectus condimentum nec. Duis vulputate mi ligula, at imperdiet arcu dignissim eu. Maecenas tincidunt purus ac enim dictum faucibus. Nulla neque arcu, eleifend ac dolor vitae, consectetur tempor arcu.</p>
             </div>
             <div class="tab col">
-                <p><b>THE MAD HATTER*</b></p>
+                <div class="d-flex float-end">
+                    <i class="material-icons md-18">cruelty_free</i>
+                    <p><b>THE MAD HATTER*</b></p>
+                </div>
                 <img src="images/01.jpeg">
             </div>
         </div>
@@ -82,22 +85,6 @@ include_once 'header.php';
             <header><b>Our </b>Designers</header>
             <img class="dots" src="images/white_dots.png">
             <p>First Surname - First Surname - First Surname - First Surname - First Surname - First Surname - First Surname - First Surname - First Surname - First Surname - First Surname - First Surname - First Surname - First Surname - First Surname</p>
-        </div>
-        <header><b>The </b>Principals</header>
-        <div class="content row">
-            <div class="col">
-                <img class="principal" src="images/01.jpeg">
-                <h1>Tricia Key</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra ac tortor sit amet semper. Vestibulum feugiat molestie nibh, ac interdum lectus condimentum nec</p>
-            </div>
-            <div class="col">
-                <img class="principal" src="images/01.jpeg">
-                <h1>Tricia Key</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra ac tortor sit amet semper. Vestibulum feugiat molestie nibh, ac interdum lectus condimentum nec</p>
-            </div>
-            <div class="col">
-                <img class="dots" src="images/white_dots.png">
-            </div>
         </div>
     </div>
 </body>

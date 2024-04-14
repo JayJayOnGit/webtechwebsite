@@ -28,19 +28,6 @@ if (true === $mysqli->query($des)) {
     echo "Error creating table: " . $mysqli->error . "  |  ";
 }
 
-$princ = "CREATE TABLE principals (
-        id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        fristname VARCHAR(255) NOT NULL,
-        surname VARCHAR(255) NOT NULL,
-        description TEXT NOT NULL
-        )";
-
-if ($mysqli->query($princ) === TRUE) {
-    echo "Table principals created successfully  |  ";
-} else {
-    echo "Error creating table: " . $mysqli->error . "  |  ";
-}
-
 $week = "CREATE TABLE weekly_insights (
         id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         date DATE NOT NULL,

@@ -20,7 +20,7 @@ h1, h2 {
 }
 
 header {
-    font-size: 128px;
+    font-size: 7vw;
     text-align: center;
     text-transform: uppercase;
 }
@@ -42,10 +42,13 @@ header {
     border-bottom-right-radius: 32px;
 }
 
+#nav-bar i {
+    position: relative;
+    top: 4px;
+}
 #nav-bar > a {
     font-size: small;
-
-    margin: 0 32px;
+    margin-right: 64px;
 
     text-transform: uppercase;
 
@@ -123,10 +126,10 @@ header {
     padding: 16px;
     margin: auto;
 
-    color: #000;
-    text-align: right;
+    color: #111;
     background-color: #fff;
 
+    border-radius: 16px;
     border-radius: 16px;
 }
 
@@ -166,7 +169,7 @@ header {
 
 #page-2 h2 {
     margin: auto 0;
-    width: 10px;
+    width: 240px;
 
     font-size: 56px;
 }
@@ -189,11 +192,13 @@ header {
 
 #page-2 .product {
     width: 100%;
+    min-width: 250px;
     border-radius: 32px;
 }
 
 #page-3 {
     margin: 240px 32px;
+    margin-bottom: 32px;
 
     color: #fff;
 }
@@ -232,12 +237,11 @@ header {
 }
 
 #contact-us {
-    position: absolute;
     width: 50%;
     top: 156px;
     left: 0;
     right: 0;
-    margin: auto;
+    margin: 160px auto;
     padding: 32px;
     padding-bottom: 16px;
 
@@ -300,5 +304,100 @@ header {
     padding-top: 16px;
     margin: 0;
 
-    color: #000 !important;
+    color: #111 !important;
+}
+
+footer {
+    position: static;
+    bottom: 0;
+
+    padding: 16px;
+
+    background-color: #111;
+    color: #fff;
+}
+
+footer .content {
+    width: 60%;
+    margin: auto;
+
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1200px) {
+    #page-1 .text {
+        min-width: 50vw;
+        margin-right: 0;
+        padding-top: 0;
+    }
+    #page-1 .dots {
+        display: none;
+    }
+
+    #page-1 .content {
+        width: 80%;
+    }
+
+    #page-2 .content {
+        width: 80%;
+    }
+
+    #page-3 .content {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #nav-bar {
+        display: none;
+    }
+}
+@media screen and (max-width: 720px) {
+    header {
+        font-size: 10vw;
+    }
+
+    #main-page {
+        margin: 16px 0;
+        padding: 8px;
+    }
+
+    #main-page .text h1, #main-page .text h2 {
+        font-size: 42px;
+        text-align: center;
+    }
+
+    #main-page .content {
+        width: 100%;
+    }
+    #page-1 {
+        margin: 120px 16px;
+    }
+
+    #page-1 .content {
+        width: 95%;
+    }
+
+    #page-2 {
+        padding: 120px 0;
+    }
+    #page-2 .content {
+        width: 90%;
+    }
+
+    #page-2 .text {
+        margin-left: 0;
+    }
+
+    #page-2 h2 {
+        font-size: xx-large;
+    }
+
+    #page-3 {
+        margin: 120px 32px;
+    }
+
+    #page-3 .designers {
+        width: 100%;
+    }
 }
