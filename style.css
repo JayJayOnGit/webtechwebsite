@@ -6,6 +6,8 @@ html, body {
 }
 
 body {
+    min-height: 100vh;
+
     background-color: #111 !important;
 
     background-image: url(images/background.jpg);
@@ -163,7 +165,8 @@ header {
 }
 
 #page-2 h2 {
-    margin: auto;
+    margin: auto 0;
+    width: 10px;
 
     font-size: 56px;
 }
@@ -226,4 +229,67 @@ header {
 
 #page-3 .content .principal {
     width: 100%;
+}
+
+#contact-us {
+    position: absolute;
+    width: 50%;
+    top: 156px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 32px;
+
+    background-color: #fff;
+
+    border-radius: 16px;
+}
+
+#contact-us input {
+    width: 100%;
+
+    border: none;
+
+    background-color: #eee;
+}
+
+#contact-us input:invalid {
+    border: 2px solid #a13d3d !important;
+}
+
+#contact-us #form-message {
+    min-height: 240px;
+
+    height:40px;
+    line-height:40px;
+    padding:0 5px;
+}
+
+#contact-us #send {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 16px;
+    padding: 8px 24px;
+
+    border-color: #777;
+}
+
+#contact-us p {
+    color: #777;
+    font-weight: bold;
+
+    user-select: none;
+    cursor: pointer;
+}
+
+#contact-us p:hover {
+    color: #222;
+}
+
+#contact-us .sign-in {
+    display: none;
+}
+
+#contact-us .sign-up {
+    display: block;
 }

@@ -43,53 +43,37 @@ include_once 'header.php';
     <div id="page-2" class="page"> <!-- Collaborations -->
         <header><b>Collaborations</b></header>
         <div class="content">
-            <div class="row">
-                <div class="col">
-                    <div class="d-flex subtitle">
-                        <h1>01</h1>
-                        <h2>DESIGN PROJECT</h2>
-                    </div>
-                    <div class="text">
-                        <img class="dots" src="images/black_dots.png">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra ac tortor sit amet semper. Vestibulum feugiat molestie nibh, ac interdum lectus condimentum nec. Duis vulputate mi ligula, at imperdiet arcu dignissim eu.</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <img class="product" src="images/01.jpeg">
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col">
-                    <img class="product" src="images/01.jpeg">
-                </div>
-                <div class="col">
-                    <div class="d-flex subtitle">
-                        <h1>02</h1>
-                        <h2>DESIGN PROJECT</h2>
-                    </div>
-                    <div class="text">
-                        <img class="dots" src="images/black_dots.png">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra ac tortor sit amet semper. Vestibulum feugiat molestie nibh, ac interdum lectus condimentum nec. Duis vulputate mi ligula, at imperdiet arcu dignissim eu.</p>
-                    </div>
-                </div>
-            </div>
+            <?php
+            $project_count = 0;
 
-            <div class="row">
-                <div class="col">
-                    <div class="d-flex subtitle">
-                        <h1>03</h1>
-                        <h2>DESIGN PROJECT</h2>
-                    </div>
-                    <div class="text">
-                        <img class="dots" src="images/black_dots.png">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra ac tortor sit amet semper. Vestibulum feugiat molestie nibh, ac interdum lectus condimentum nec. Duis vulputate mi ligula, at imperdiet arcu dignissim eu.</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <img class="product" src="images/01.jpeg">
-                </div>
-            </div>
+            $stmt = "SELECT * FROM projects";
+
+            $result = $mysqli->query($stmt);
+
+            echo $mysqli->error;
+
+            $projects = $result->fetch_all(MYSQLI_ASSOC);
+
+            foreach ($projects as $project)
+            {
+                $project_count++;
+
+                echo '<div class="row">';
+
+                if (0 === $project_count % 2) {
+                    echo '<div class="col"> <img class="product" src="images/' . $project['imgref'] . '"> </div>';
+                }
+
+                echo '<div class="col"> <div class="d-flex subtitle"> <h1>' . sprintf("%02d", $project_count) . '</h1> <h2>' . $project['title'] . '</h2> </div> <div class="text"> <img class="dots" src="images/black_dots.png"> <p>' . $project['description'] . '</p> </div> </div>';
+
+                if (0 != $project_count % 2) {
+                    echo '<div class="col"> <img class="product" src="images/' . $project['imgref'] . '"> </div>';
+                }
+
+                echo '</div>';
+            }
+            ?>
         </div>
     </div>
 

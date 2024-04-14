@@ -64,4 +64,17 @@ if (true === $mysqli->query($ver)) {
 } else {
     echo "Error creating table: " . $mysqli->error . "  |  ";
 }
+
+$ver = "CREATE TABLE users (
+        id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL UNIQUE,
+        password VARCHAR(255) NOT NULL
+        )";
+
+if (true === $mysqli->query($ver)) {
+    echo "Table users created successfully  |  ";
+} else {
+    echo "Error creating table: " . $mysqli->error . "  |  ";
+}
 ?>

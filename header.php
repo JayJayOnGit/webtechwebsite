@@ -11,6 +11,11 @@ include_once 'connect.php';
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+
+    <script src="js/contact.js"></script>
     <title>THE MAD HATTER</title>
 </head>
 
