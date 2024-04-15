@@ -19,6 +19,11 @@ h1, h2 {
     text-transform: uppercase;
 }
 
+a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
 header {
     font-size: 7vw;
     text-align: center;
@@ -53,6 +58,44 @@ header {
     text-transform: uppercase;
 
     cursor: pointer;
+}
+
+#hamburger{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    display: none;
+
+    background-color: #111;
+    color: #fff;
+
+    z-index: 100;
+}
+
+#dropdown {
+
+    display: flex;
+    flex-direction: column;
+}
+
+#dropdown a, #hamburger i {
+    padding: 6px 0;
+    text-align: center;
+
+    user-select: none;
+    cursor: pointer;
+}
+
+#dropdown a {
+    background-color: #222;
+}
+
+#dropdown a:hover {
+    background-color: #111;
 }
 
 #main-page {
@@ -198,7 +241,6 @@ header {
 
 #page-3 {
     margin: 240px 32px;
-    margin-bottom: 32px;
 
     color: #fff;
 }
@@ -350,6 +392,14 @@ footer .content {
 @media screen and (max-width: 1000px) {
     #nav-bar {
         display: none;
+    }
+
+    #hamburger {
+        display: flex;
+    }
+
+    #main-page .text {
+        padding-top: 5%;
     }
 }
 @media screen and (max-width: 720px) {

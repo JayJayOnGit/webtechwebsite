@@ -19,7 +19,6 @@ include_once 'connect.php';
     <script src="js/contact.js"></script>
     <title>THE MAD HATTER</title>
 </head>
-
 <?php
 include_once 'nav.php';
 ?>

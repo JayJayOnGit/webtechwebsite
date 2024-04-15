@@ -12,17 +12,17 @@ $( document ).ready(function() {
         let validated = true;
         let invalidMessage = "";
 
-        if (! usernameRegex.test($('#form-name').val())) {
+        if (isSignup && !usernameRegex.test($('#form-name').val())) {
             validated = false;
             invalidMessage = "username is invalid";
         }
 
-        else if (! emailRegex.test($('#form-email').val())) {
+        else if (!emailRegex.test($('#form-email').val())) {
             validated = false;
             invalidMessage = "email is invalid";
         }
 
-        else if ($('#form-password').val() !== $('#form-password-confirm').val()) {
+        else if (isSignup && $('#form-password').val() !== $('#form-password-confirm').val()) {
             validated = false;
             invalidMessage = "passwords do not match";
         }
@@ -65,7 +65,7 @@ function registerUser() {
         url: "check-user.php",
         data: args,
         complete: function(r){
-            alert(r.responseText);
+            updateSubmitMessage(r.responseText);
         }
     });
 }
@@ -86,7 +86,7 @@ function confirmUser() {
         url: "check-user.php",
         data: args,
         complete: function(r){
-            alert(r.responseText);
+            updateSubmitMessage(r.responseText);
         }
     });
 }

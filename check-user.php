@@ -25,11 +25,11 @@ function register_user($user_data) {
 
         $result = $mysqli->query($stmt);
 
-        echo "user added, message sent";
+        echo "Your message has been sent.";
     }
 
     else {
-        echo "email taken";
+        echo "This email is already taken.";
     }
 }
 
@@ -39,17 +39,17 @@ function confirm_user($user_data) {
     $user = check_user($user_data);
 
     if (false === $user) {
-        echo "please create a user account";
+        echo "Please Sign Up to send a message.";
     }
 
     else {
         if (!password_verify($password, $user['password']))
         {
-            echo "password is incorrect";
+            echo "Password is incorrect.";
             return;
         }
 
-        echo "message has been sent";
+        echo "Your message has been sent.";
     }
 }
 
