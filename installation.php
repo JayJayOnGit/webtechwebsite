@@ -89,8 +89,6 @@ function check_version($name, $current_version) {
     return true;
 }
 
-$version = "0.1.1";
-
 $new_projects = check_version("projects", $version);
 
 if (true === $new_projects) {

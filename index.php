@@ -60,21 +60,23 @@ include_once 'header.php';
 
             foreach ($projects as $project)
             {
-                $project_count++;
+                if ($version === $project['version']) {
+                    $project_count++;
 
-                echo '<div class="row">';
+                    echo '<div class="row">';
 
-                if (0 === $project_count % 2) {
-                    echo '<div class="col"> <img class="product" src="images/' . $project['imgref'] . '"> </div>';
+                    if (0 === $project_count % 2) {
+                        echo '<div class="col"> <img class="product" src="images/' . $project['imgref'] . '"> </div>';
+                    }
+
+                    echo '<div class="col"> <div class="d-flex subtitle"> <h1>' . sprintf("%02d", $project_count) . '</h1> <h2>' . $project['title'] . '</h2> </div> <div class="text"> <img class="dots" src="images/black_dots.png"> <p>' . $project['description'] . '</p> </div> </div>';
+
+                    if (0 != $project_count % 2) {
+                        echo '<div class="col"> <img class="product" src="images/' . $project['imgref'] . '"> </div>';
+                    }
+
+                    echo '</div>';
                 }
-
-                echo '<div class="col"> <div class="d-flex subtitle"> <h1>' . sprintf("%02d", $project_count) . '</h1> <h2>' . $project['title'] . '</h2> </div> <div class="text"> <img class="dots" src="images/black_dots.png"> <p>' . $project['description'] . '</p> </div> </div>';
-
-                if (0 != $project_count % 2) {
-                    echo '<div class="col"> <img class="product" src="images/' . $project['imgref'] . '"> </div>';
-                }
-
-                echo '</div>';
             }
             ?>
         </div>

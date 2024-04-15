@@ -6,6 +6,7 @@ $dbasename = "madhatter";
 
 // Create connection
 $mysqli = new mysqli($servername, $username, $password, $dbasename);
+$version = "0.1.1";
 
 // Check connection
 if ($mysqli->connect_errno)
