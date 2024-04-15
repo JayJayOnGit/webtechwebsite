@@ -1,6 +1,7 @@
 
-var usernameRegex = new RegExp('^[A-Za-z ]+$');
-var emailRegex = new RegExp('^\\w+[@]\\w+[.].+$');
+const usernameRegex = new RegExp('^[A-Za-z ]+$');
+const emailRegex = new RegExp('^\\w+[@]\\w+[.].+$');
+const passwordRegex = new RegExp('^\\S*(?=\\S{8,})(?=\\S*[!@#$&*])(?=\\S*[a-z])(?=\\S*[A-Z])(?=\\S*[\\d])\\S*$');
 
 $( document ).ready(function() {
 
@@ -20,6 +21,11 @@ $( document ).ready(function() {
         else if (!emailRegex.test($('#form-email').val())) {
             validated = false;
             invalidMessage = "email is invalid";
+        }
+
+        else if (isSignup && !passwordRegex.test($('#form-password').val())) {
+            validated = false;
+            invalidMessage = "password is too weak.";
         }
 
         else if (isSignup && $('#form-password').val() !== $('#form-password-confirm').val()) {

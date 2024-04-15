@@ -22,6 +22,14 @@ include_once 'header.php';
                 <label for="password_confirm">Confirm Password:</label><br>
                 <input type="password" id="form-password-confirm" name="password_confirm" required><br>
             </div>
+            <div class="sign-up password-req">
+                <p>Password Requires:</p>
+                <p>At least one Uppercase Letter</p>
+                <p>At least one Lowercase Letter</p>
+                <p>At least one Special Character</p>
+                <p>At least one Numerical Character</p>
+                <p>A minimum length of 8</p>
+            </div>
             <label for="message">Message:</label><br>
             <input type="text" id="form-message" name="message" required><br>
             <button id="send" class="sign_up_send">Send</button>

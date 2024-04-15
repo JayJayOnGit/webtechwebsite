@@ -305,11 +305,15 @@ header {
 }
 
 #contact-us #form-message {
-    min-height: 240px;
+    min-height: 140px;
+}
 
-    height:40px;
-    line-height:40px;
-    padding:0 5px;
+#contact-us .password-req p {
+    font-size: small;
+    margin: 0;
+    padding: 0;
+
+    color: #111;
 }
 
 #contact-us #send {
